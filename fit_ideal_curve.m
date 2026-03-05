@@ -10,9 +10,9 @@ clear; clc; close all;
 % 向右弯为正，向左弯为负
 
 segments = [
-    struct('L', 60, 'theta', +pi/32);   % 第1段：长度60mm，向右弯 
-    struct('L', 60, 'theta', -pi/12);   % 第2段：长度40mm，向左弯
-    struct('L', 40, 'theta', +pi/4);
+    struct('L', 20, 'theta', +15*pi/16);   % 第1段：长度60mm，向右弯 
+    struct('L', 20, 'theta', +3*pi/16);   % 第2段：长度40mm，向左弯
+    % struct('L', 40, 'theta', +pi/4);
 %     struct('L', 60, 'theta', +pi/8);
 ];
 % ------------------------------------------------------
@@ -20,7 +20,7 @@ segments = [
 % 总长度由各段长度自动得到
 Total_Length = sum([segments.L]);
 
-n_nodes = 15;  % notch 数量（最终点数为 n_nodes+1）
+n_nodes = 10;  % notch 数量（最终点数为 n_nodes+1）
 
 % 依据各段长度比例给每段分配离散段数（保证总和= n_nodes）
 L_all = [segments.L];
